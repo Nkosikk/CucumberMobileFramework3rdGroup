@@ -2,16 +2,18 @@ package Steps;
 
 import io.cucumber.java.en.*;
 
-public class StepDef {
+public class StepDef extends Base {
 
     @Given("landing page")
     public void landing_page() {
-
+        landingPage.
+                verifyAppLaunched();
     }
 
     @And("I click Wi-Fi")
     public void i_click_wi_fi() {
-
+        landingPage.
+                clickWifiButton();
     }
 
     @And("I enter the host")

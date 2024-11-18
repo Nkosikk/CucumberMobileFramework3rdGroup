@@ -14,6 +14,8 @@ public class LandingPage {
     AndroidUtils androidUtils;
 
     private static By WIfiButton = By.id("com.telerik.testing.executionagent:id/wifiConnectionButton");
+    private static By errorMessage = By.id("android:id/message");
+    private static By closeMessageOK = By.id("android:id/button2");
 
     public LandingPage() {
         driver = appiumDriverFactory.getDriver();
@@ -32,6 +34,13 @@ public class LandingPage {
 
     public void clickWifiButton(){
         androidUtils.clickButton(WIfiButton);
+    }
+
+    public void verifyDisplayedErrorMessage(){
+        androidUtils.getErrorDisplayed(errorMessage);
+    }
+    public void  clickOK(){
+        androidUtils.clickButton(closeMessageOK);
     }
 
 

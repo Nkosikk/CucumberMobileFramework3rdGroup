@@ -24,4 +24,14 @@ public class AndroidUtils {
     public void clickButton(By by) {
         driver.findElement(by).click();
     }
+
+    public void enterDataUsingHostKeys(By by){
+        driver.findElement(by).sendKeys("127.0.0.1");
+    }
+    public void enterDataUsingPortKeys(By by){
+        driver.findElement(by).sendKeys("4723");
+    }
+    public void getErrorDisplayed(By by){
+        driver.findElement(by).getText();
+    }
 }

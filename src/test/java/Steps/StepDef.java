@@ -1,6 +1,12 @@
 package Steps;
 
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import static Utils.AppiumDriverFactory.driver;
 
 public class StepDef extends Base {
 
@@ -39,5 +45,13 @@ public class StepDef extends Base {
     @And("I click Ok button")
     public void i_click_ok_button() {
 
+    }
+
+    @AfterStep
+    public void addScreenshot(Scenario scenario){
+        if (scenario.isFailed()){
+            byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png","image");
+        }
     }
 }

@@ -34,4 +34,7 @@ public class AndroidUtils {
     public void getErrorDisplayed(By by){
         driver.findElement(by).getText();
     }
+    public void getDisplayedResults(By by){
+        driver.findElement(by).getText();
+    }
 }

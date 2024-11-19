@@ -29,7 +29,7 @@ public class StepDef extends Base {
 
     @And("I enter the Port")
     public void i_enter_the_port() {
-
+        wifiConnectionPage.enterPortText("246810");
     }
 
     @When("I click connect")

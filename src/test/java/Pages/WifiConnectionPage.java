@@ -11,7 +11,7 @@ public class WifiConnectionPage {
 
 
     AppiumDriver driver;
-    //AppiumDriverFactory appiumDriverFactory = AppiumDriverFactory.getInstanceOfAppiumDriverFactory();
+    AppiumDriverFactory appiumDriverFactory = AppiumDriverFactory.getInstanceOfAppiumDriverFactory();
     AndroidUtils androidUtils;
 
     private static By HostTextElement = By.id("com.telerik.testing.executionagent:id/ipAddressEditText");
@@ -20,7 +20,7 @@ public class WifiConnectionPage {
 
 
     public WifiConnectionPage() {
-        //driver = appiumDriverFactory.getDriver();
+        driver = appiumDriverFactory.getDriver();
         androidUtils = new AndroidUtils(driver);
         PageFactory.initElements(driver, this);
 
@@ -28,6 +28,10 @@ public class WifiConnectionPage {
 
     public void enterHostText( String key){
         androidUtils.enterText(HostTextElement, key);
+    }
+
+    public void enterPortText( String key){
+        androidUtils.enterText(PortTextElement, key);
     }
 
 //    public void enterHostText(String hostText){

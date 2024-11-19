@@ -15,6 +15,7 @@ public class LandingPage {
 
     private static By WIfiButton = By.id("com.telerik.testing.executionagent:id/wifiConnectionButton");
 
+
     public LandingPage() {
         driver = appiumDriverFactory.getDriver();
         androidUtils = new AndroidUtils(driver);

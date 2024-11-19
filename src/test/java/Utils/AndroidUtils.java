@@ -25,7 +25,7 @@ public class AndroidUtils {
         driver.findElement(by).click();
     }
 
-    public void enterKeys(By by){
-        driver.findElement(by).sendKeys();
+    public void enterText (By by, String keys){
+        driver.findElement(by).sendKeys(keys);
     }
 }

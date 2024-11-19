@@ -24,4 +24,8 @@ public class AndroidUtils {
     public void clickButton(By by) {
         driver.findElement(by).click();
     }
+
+    public void enterText (By by, String keys){
+        driver.findElement(by).sendKeys(keys);
+    }
 }

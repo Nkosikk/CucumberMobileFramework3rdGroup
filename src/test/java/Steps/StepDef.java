@@ -24,7 +24,7 @@ public class StepDef extends Base {
 
     @And("I enter the host")
     public void i_enter_the_host() {
-
+       wifiConnectionPage.enterKeys();
     }
 
     @And("I enter the Port")

@@ -16,6 +16,8 @@ public class WifiConnectionPage {
 
     private static By HostTextElement = By.id("com.telerik.testing.executionagent:id/ipAddressEditText");
     private static By PortTextElement = By.id("com.telerik.testing.executionagent:id/portEditText");
+    private static By ConnectButtonElement = By.id("com.telerik.testing.executionagent:id/wifiConnectButton");
+    private static By MessageElement = By.xpath("//android.widget.TextView[@resource-id=\"android:id/message\"]");
 
 
 
@@ -34,16 +36,15 @@ public class WifiConnectionPage {
         androidUtils.enterText(PortTextElement, key);
     }
 
-//    public void enterHostText(String hostText){
-//
-//        if (androidUtils.objectExist(HostTextElement)) {
-//            androidUtils.enterHost(HostTextElement,hostText);
-//        } else {
-//            Assert.fail("App not launched successful");
-//        }
-//
-//    }
+    public void clickConnect(){
+        androidUtils.clickButton(ConnectButtonElement);
+    }
 
-
-
+    public void checkIfMessageIsDisplayed(){
+        if (androidUtils.objectExist(MessageElement)) {
+            Assert.assertTrue(true, "Message is displayed");
+        } else {
+            Assert.fail("Failed to display");
+        }
+    }
 }

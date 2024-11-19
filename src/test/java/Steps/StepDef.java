@@ -24,7 +24,7 @@ public class StepDef extends Base {
 
     @And("I enter the host")
     public void i_enter_the_host() {
-        wifiConnectionPage.enterHostText("123456789");
+        wifiConnectionPage.enterHostText("255.255.255.0");
     }
 
     @And("I enter the Port")
@@ -34,12 +34,12 @@ public class StepDef extends Base {
 
     @When("I click connect")
     public void i_click_connect() {
-
+        wifiConnectionPage.clickConnect();
     }
 
     @Then("the error message is displayed")
     public void the_error_message_is_displayed() {
-
+        wifiConnectionPage.checkIfMessageIsDisplayed();
     }
 
     @And("I click Ok button")

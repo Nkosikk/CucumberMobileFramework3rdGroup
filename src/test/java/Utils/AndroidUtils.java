@@ -28,4 +28,10 @@ public class AndroidUtils {
     public void enterText (By by, String keys){
         driver.findElement(by).sendKeys(keys);
     }
+
+    public String getText(By by){
+        String getText = driver.findElement(by).getText();
+
+        return getText;
+    }
 }

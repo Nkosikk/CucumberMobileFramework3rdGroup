@@ -16,7 +16,10 @@ public class WifiConnectionPage {
 
     private static By HostTextElement = By.id("com.telerik.testing.executionagent:id/ipAddressEditText");
     private static By PortTextElement = By.id("com.telerik.testing.executionagent:id/portEditText");
-
+    private static By ConnectBtnElement = By.id("com.telerik.testing.executionagent:id/wifiConnectButton");
+    private static By alertTitleElement = By.id("android:id/alertTitle");
+    private static By messageElement = By.id("android:id/message");
+    private static By button2Element = By.id("android:id/button2");
 
 
     public WifiConnectionPage() {
@@ -26,24 +29,28 @@ public class WifiConnectionPage {
 
     }
 
-    public void enterHostText( String key){
+    public void enterHostText(String key) {
         androidUtils.enterText(HostTextElement, key);
     }
 
-    public void enterPortText( String key){
+    public void enterPortText(String key) {
         androidUtils.enterText(PortTextElement, key);
     }
 
-//    public void enterHostText(String hostText){
-//
-//        if (androidUtils.objectExist(HostTextElement)) {
-//            androidUtils.enterHost(HostTextElement,hostText);
-//        } else {
-//            Assert.fail("App not launched successful");
-//        }
-//
-//    }
+    public void clickConnectButton() {
+        androidUtils.clickButton(ConnectBtnElement);
+    }
 
 
+    public void verifyErrorMessageText() {
+        String errorTitle = androidUtils.getText(messageElement);
+
+        Assert.assertEquals(errorTitle, "The WIFI input data is invalid, or is incompatible with Mobile Testing.");
+        System.out.println(errorTitle);
+    }
+
+    public void clickOkButton(){
+        androidUtils.clickButton(button2Element);
+    }
 
 }

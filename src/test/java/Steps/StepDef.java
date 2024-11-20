@@ -24,34 +24,34 @@ public class StepDef extends Base {
 
     @And("I enter the host")
     public void i_enter_the_host() {
-        wifiConnectionPage.enterHostText("123456789");
+        wifiConnectionPage.enterHostText("255.255.10.258");
     }
 
     @And("I enter the Port")
     public void i_enter_the_port() {
-        wifiConnectionPage.enterPortText("246810");
+        wifiConnectionPage.enterPortText("main host");
     }
 
     @When("I click connect")
     public void i_click_connect() {
-
+        wifiConnectionPage.clickConnectButton();
     }
 
     @Then("the error message is displayed")
     public void the_error_message_is_displayed() {
-
+        wifiConnectionPage.verifyErrorMessageText();
     }
 
     @And("I click Ok button")
     public void i_click_ok_button() {
-
+        wifiConnectionPage.clickOkButton();
     }
 
     @AfterStep
-    public void addScreenshot(Scenario scenario){
-        if (scenario.isFailed()){
-            byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot,"image/png","image");
+    public void addScreenshot(Scenario scenario) {
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "image");
         }
     }
 }

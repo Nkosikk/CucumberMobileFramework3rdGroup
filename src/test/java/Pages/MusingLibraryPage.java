@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class LandingPage {
+public class MusingLibraryPage {
 
     AppiumDriver driver;
     AppiumDriverFactory appiumDriverFactory = AppiumDriverFactory.getInstanceOfAppiumDriverFactory();
@@ -16,7 +16,7 @@ public class LandingPage {
     private static By WIfiButton = By.id("com.telerik.testing.executionagent:id/wifiConnectionButton");
 
 
-    public LandingPage() {
+    public MusingLibraryPage() {
         driver = appiumDriverFactory.getDriver();
         androidUtils = new AndroidUtils(driver);
         PageFactory.initElements(driver, this);
@@ -30,10 +30,10 @@ public class LandingPage {
             Assert.fail("App not launched successful");
         }
     }
-
-    public void clickWifiButton(){
-        androidUtils.clickButton(WIfiButton);
-    }
+//
+//    public void clickWifiButton(){
+//        androidUtils.clickButton(WIfiButton);
+//    }
 
 
 }

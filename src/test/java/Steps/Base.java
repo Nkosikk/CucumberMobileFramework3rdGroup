@@ -1,9 +1,9 @@
 package Steps;
 
-import Pages.LandingPage;
+import Pages.MusingLibraryPage;
 import Pages.WifiConnectionPage;
 
 public class Base {
-    LandingPage landingPage = new LandingPage();
+    MusingLibraryPage landingPage = new MusingLibraryPage();
     WifiConnectionPage wifiConnectionPage = new WifiConnectionPage();
 }

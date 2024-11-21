@@ -55,4 +55,8 @@ public class MusingLibraryPage {
        }
    }
 
+   public void clickPauseButton(){
+        androidUtils.clickButton(PauseButtonElement);
+   }
+
 }

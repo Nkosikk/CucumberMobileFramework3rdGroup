@@ -34,6 +34,11 @@ public class StepDef extends Base {
     public void music_must_play() {
     musingLibraryPage.verifyThePauseButton();
     }
+
+    @And("I click the pause button")
+    public void i_click_the_pause_button() {
+        musingLibraryPage.clickPauseButton();
+    }
     @AfterStep
     public void addScreenshot(Scenario scenario){
         if (scenario.isFailed()){

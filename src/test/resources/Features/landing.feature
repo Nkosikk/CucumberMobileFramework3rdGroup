@@ -6,3 +6,4 @@ Feature: Connect to Wi-fi
     When I click Geisha
     And I click the Allow button
     Then music must play
+    And I click the pause button
